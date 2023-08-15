@@ -1,0 +1,212 @@
+<html lang="en">
+<head>
+   <title>5STAR5</title>
+   <style>
+    body{
+        background-image: url("https://w7.pngwing.com/pngs/245/96/png-transparent-five-star-the-boring-patient-trusting-thomas-collars-cuffs-medicare-5-star-3d-gold-star-free-game-reading-symmetry.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    #box1{
+        background-color: blue;
+    }
+    #box2{
+        background-color: black;
+    }
+    #box3{
+        background-color: orange;
+    }
+    #box4{
+        background-color: red;
+    }
+    #box5{
+        background-color: green;
+    }
+    #box6{
+        background-color: brown;
+    }
+    #box7{
+        background-color: chocolate;
+    }
+    #box8{
+        background-color: yellow;
+    }
+    #box9{
+        background-color: violet;
+    }
+    .square:hover{
+        cursor: pointer;
+    }
+    table{
+        margin-left: 500px;
+        margin-top: 100px;
+        border:5px solid;
+    }
+    .square{
+        width:100px;
+        height:100px;
+    }
+    #score
+    {
+        width:150px;
+        height:50px;
+        border: 2px solid orange;
+        text-align: center;
+    }
+      </style>
+  </head>
+<body>
+    <table>
+    <tr>
+    <td id="box1" class="square" onclick="validate1()"></td>
+    <td id="box2" class="square" onclick="validate2()"></td>
+    <td id="box3" class="square" onclick="validate3()"></td>
+    </tr>
+    <tr>
+    <td id="box4" class="square" onclick="validate4()"></td>
+    <td id="box5" class="square" onclick="validate5()"></td>
+    <td id="box6" class="square" onclick="validate6()"></td>
+    </tr>
+    <tr>
+    <td id="box7" class="square" onclick="validate7()"></td>
+    <td id="box8" class="square" onclick="validate8()"></td>
+    <td id="box9" class="square" onclick="validate9()"></td>
+    </tr>
+    </table>
+    <br>
+    <h1>Score>>><div id="score">0</div></h1>
+   <script>
+    var scores=0;
+    const myArray=[1,2,3,4,5,6,7,8,"BOMB"];
+        function validate1()
+        { 
+            var temp=document.getElementById('box1').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box1").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px";
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+                document.writeln("<a href='newgame.html'>REPLAY"+"</a>");
+               }
+        }
+        function validate2()
+        { 
+            var temp=document.getElementById('box2').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box2").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+               }
+        }
+        function validate3()
+        { 
+            var temp=document.getElementById('box3').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box3").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+               } 
+         }
+        function validate4()
+        { 
+            var temp=document.getElementById('box4').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box4").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+               }
+        }
+        function validate5()
+        { 
+            var temp=document.getElementById('box5').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box5").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+               }
+        }
+        function validate6()
+        { 
+            var temp=document.getElementById('box6').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box6").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px";
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+               }
+        }
+        function validate7()
+        { 
+            var temp=document.getElementById('box7').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box7").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px";
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+               }
+        }
+        function validate8()
+        { 
+            var temp=document.getElementById('box8').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box8").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px";
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+               } 
+        }
+        function validate9()
+        { 
+            var temp=document.getElementById('box9').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box9").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+               }
+        }
+
+    </script>    
+    
+</body>
+</html>
