@@ -89,10 +89,10 @@
                     secString = "0" + secString;
                 }
                 if (second==25){
-                    document.writeln("<h1 style='text-align:center; color:white'>Time is Over<br>(MAX=25 Seconds only)"+"</h1>");
+                    document.writeln("<h1 style='text-align:center; color:yellow'>Time is Over<br>(MAX=25 Seconds only)"+"</h1>");
                     document.writeln("<a href='gamerr2.html'><h1 style='text-align:center; color:red'>TAP HERE TO REPLAY"+"</h1></a>");
                     document.body.style.backgroundImage="url('https://static.vecteezy.com/system/resources/previews/005/292/685/original/time-up-neon-signs-style-text-free-vector.jpg')";
-                    document.body.style.backgroundSize="cover";
+                    document.body.style.backgroundSize="100% 100%";
                     document.body.style.backgroundRepeat="no-repeat";
                     document.body.style.backgroundPosition="center";
 
@@ -112,23 +112,23 @@
                 document.getElementById("score").innerHTML=scores;
                 if (scores>=4){
                     document.writeln("<h1 style='text-align:center; color:yellow'>Level 2 is successfully completed"+"</h1>");
+                    document.writeln("<a href='gamerr3.html'><h1 style='text-align:center; color:red'>CLICK HERE FOR LEVEL UP"+"</h1></a>");
                     document.body.style.backgroundImage="url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg')";
-                    document.body.style.backgroundSize="cover";
+                    document.body.style.backgroundSize="100% 100%";
                     document.body.style.backgroundRepeat="no-repeat";
                     document.body.style.backgroundPosition="center";
 
                 }
             }
             else{
-                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
-                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
-                document.writeln("<h1 style='text-align:center'>Time Taken : "+minute+' mins & '+second+'.'+count+' secs'+"</h1>");
-                document.writeln("<h1 style='text-align:center; font-size:30px;' ><a href='gamerr2.html'>REPLAY"+"</a></h1>");
+                document.writeln("<h1 style='text-align:center; color:yellow'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center; color:yellow'>Your score is : "+scores+"</h1>");
+                document.writeln("<h1 style='text-align:center; color:yellow'>Time Taken : "+minute+' mins & '+second+'.'+count+' secs'+"</h1>");
+                document.writeln("<a href='gamerr2.html'><h1 style='text-align:center; color:red'>REPLAY"+"</h1></a>");
                 document.body.style.backgroundImage="url('https://static9.depositphotos.com/1177973/1081/i/450/depositphotos_10813173-stock-photo-cartoon-style-bomb-on-wooden.jpg')";
-                document.body.style.backgroundSize="450px";
+                document.body.style.backgroundSize="100% 100%";
                 document.body.style.backgroundRepeat="no-repeat";
                 document.body.style.backgroundPosition="center";
-                document.bgColor="green";
             }  
         }
         function validate2()
@@ -141,23 +141,23 @@
                 document.getElementById("score").innerHTML=scores;
                 if (scores>=4){
                     document.writeln("<h1 style='text-align:center; color:yellow'>Level 2 is successfully completed"+"</h1>");
+                    document.writeln("<a href='gamerr3.html'><h1 style='text-align:center; color:red'>CLICK HERE FOR LEVEL UP"+"</h1></a>");
                     document.body.style.backgroundImage="url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg')";
-                    document.body.style.backgroundSize="cover";
+                    document.body.style.backgroundSize="100% 100%";
                     document.body.style.backgroundRepeat="no-repeat";
                     document.body.style.backgroundPosition="center";
                 }
             }
             else{
-                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
-                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
-                document.writeln("<h1 style='text-align:center'>Time Taken : "+minute+' mins & '+second+'.'+count+' secs'+"</h1>");
-                document.writeln("<h1 style='text-align:center; font-size:30px;' ><a href='gamerr2.html'>REPLAY"+"</a></h1>");
+                document.writeln("<h1 style='text-align:center; color:yellow'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center; color:yellow'>Your score is : "+scores+"</h1>");
+                document.writeln("<h1 style='text-align:center; color:yellow'>Time Taken : "+minute+' mins & '+second+'.'+count+' secs'+"</h1>");
+                document.writeln("<a href='gamerr2.html'><h1 style='text-align:center; color:red'>REPLAY"+"</h1></a>");
                 document.body.style.backgroundImage="url('https://static9.depositphotos.com/1177973/1081/i/450/depositphotos_10813173-stock-photo-cartoon-style-bomb-on-wooden.jpg')";
-                document.body.style.backgroundSize="450px";
+                document.body.style.backgroundSize="100% 100%";
                 document.body.style.backgroundRepeat="no-repeat";
                 document.body.style.backgroundPosition="center";
-                document.bgColor="green";
-               }
+            }  
         }         
         timeNew();
 </script>    
