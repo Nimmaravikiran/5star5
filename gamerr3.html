@@ -1,0 +1,198 @@
+<html lang="en">
+<head>
+   <title>5STAR5</title>
+   <style>
+    body{
+        background-image: url("https://w7.pngwing.com/pngs/245/96/png-transparent-five-star-the-boring-patient-trusting-thomas-collars-cuffs-medicare-5-star-3d-gold-star-free-game-reading-symmetry.png");
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    #box1{
+        background-color: red;
+    }
+    #box2{
+        background-color: blue;
+    }
+    #box3{
+        background-color: green;
+    }
+    .square:hover{
+        cursor: pointer;
+    }
+    table{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border:5px solid;
+    }
+    .square{
+        width:100px;
+        height:100px;
+    }
+    #score
+    {
+        width:150px;
+        height:50px;
+        border: 2px solid orange;
+        text-align: center;
+    }
+    #time
+    {
+        width:150px;
+        height:50px;
+        border:2px solid orange;
+        text-align:center;
+    }
+    .txt{
+        font-size: 7px;
+    }
+        </style>
+  </head>
+  <body>
+    <h1>Score>>><div id="score">0</div></h1>
+    <h1>Time>>><div id="time"><span class="digit" id="min">
+        00</span>
+    <span class="txt">Min</span>
+    <span class="digit" id="sec">
+        00</span>
+    <span class="txt">Sec</span></div></h1>
+    <table>
+        <tr>
+        <td id="box1" class="square" onclick="validate1()"></td>
+        <td id="box2" class="square" onclick="validate2()"></td>
+        <td id="box3" class="square" onclick="validate3()"></td>
+        </tr>
+    </table>
+    <script>
+        var scores=0;
+    const myArray=[1,2,3,"BOMB"];
+    let minute = 0;
+    let second = 0;
+    let count = 0;
+    timer = true;
+        function timeNew(){
+            if (timer){
+                count++;
+                if (count==100){
+                    second++;
+                    count = 0;
+                }
+                if (second==60){
+                    minute++;
+                    second=0;
+                }
+                let minString = minute;
+                let secString = second;
+                if (minute<5){
+                    minString = "0" + minString;
+                }
+                if (second<10){
+                    secString = "0" + secString;
+                }
+                if (second==25){
+                    document.writeln("<h1 style='text-align:center; color:white'>Time is Over<br>(MAX=25 Seconds only)"+"</h1>");
+                    document.writeln("<a href='gamerr3.html'><h1 style='text-align:center; color:red'>TAP HERE TO REPLAY"+"</h1></a>");
+                    document.body.style.backgroundImage="url('https://static.vecteezy.com/system/resources/previews/005/292/685/original/time-up-neon-signs-style-text-free-vector.jpg')";
+                    document.body.style.backgroundSize="cover";
+                    document.body.style.backgroundRepeat="no-repeat";
+                    document.body.style.backgroundPosition="center";
+
+                }
+                document.getElementById('min').innerHTML = minString;
+		        document.getElementById('sec').innerHTML = secString;
+                setTimeout(timeNew, 10);
+            }
+        }
+        function validate1()
+        {   
+            var temp=document.getElementById('box1').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box1").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px";
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+                if (scores>=9){
+                    document.writeln("<h1 style='text-align:center; color:yellow'>Level 3 is successfully completed"+"</h1>");
+                    document.body.style.backgroundImage="url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg')";
+                    document.body.style.backgroundSize="cover";
+                    document.body.style.backgroundRepeat="no-repeat";
+                    document.body.style.backgroundPosition="center";
+                }
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Time Taken : "+minute+' mins & '+second+'.'+count+' secs'+"</h1>");
+                document.writeln("<h1 style='text-align:center; font-size:30px;' ><a href='gamerr3.html'>REPLAY"+"</a></h1>");
+                document.body.style.backgroundImage="url('https://static9.depositphotos.com/1177973/1081/i/450/depositphotos_10813173-stock-photo-cartoon-style-bomb-on-wooden.jpg')";
+                document.body.style.backgroundSize="450px";
+                document.body.style.backgroundRepeat="no-repeat";
+                document.body.style.backgroundPosition="center";
+                document.bgColor="green";
+            }  
+        }
+        function validate2()
+        {   
+            var temp=document.getElementById('box2').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box2").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+                if (scores>=9){
+                    document.writeln("<h1 style='text-align:center; color:yellow'>Level 3 is successfully completed"+"</h1>");
+                    document.body.style.backgroundImage="url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg')";
+                    document.body.style.backgroundSize="cover";
+                    document.body.style.backgroundRepeat="no-repeat";
+                    document.body.style.backgroundPosition="center";
+                }
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Time Taken : "+minute+' mins & '+second+'.'+count+' secs'+"</h1>");
+                document.writeln("<h1 style='text-align:center; font-size:30px;' ><a href='gamerr3.html'>REPLAY"+"</a></h1>");
+                document.body.style.backgroundImage="url('https://static9.depositphotos.com/1177973/1081/i/450/depositphotos_10813173-stock-photo-cartoon-style-bomb-on-wooden.jpg')";
+                document.body.style.backgroundSize="450px";
+                document.body.style.backgroundRepeat="no-repeat";
+                document.body.style.backgroundPosition="center";
+                document.bgColor="green";
+               }
+        }    
+        function validate3()
+        {   
+            var temp=document.getElementById('box3').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            document.getElementById("box3").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
+            if (temp!="BOMB")
+            {
+                scores=scores+temp;
+                document.getElementById("score").innerHTML=scores;
+                if (scores>=9){
+                    document.writeln("<h1 style='text-align:center; color:yellow'>Level 3 is successfully completed"+"</h1>");
+                    document.body.style.backgroundImage="url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg')";
+                    document.body.style.backgroundSize="cover";
+                    document.body.style.backgroundRepeat="no-repeat";
+                    document.body.style.backgroundPosition="center";
+                }
+            }
+            else{
+                document.writeln("<h1 style='text-align:center'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Your score is : "+scores+"</h1>");
+                document.writeln("<h1 style='text-align:center'>Time Taken : "+minute+' mins & '+second+'.'+count+' secs'+"</h1>");
+                document.writeln("<h1 style='text-align:center; font-size:30px;' ><a href='gamerr3.html'>REPLAY"+"</a></h1>");
+                document.body.style.backgroundImage="url('https://static9.depositphotos.com/1177973/1081/i/450/depositphotos_10813173-stock-photo-cartoon-style-bomb-on-wooden.jpg')";
+                document.body.style.backgroundSize="450px";
+                document.body.style.backgroundRepeat="no-repeat";
+                document.body.style.backgroundPosition="center";
+                document.bgColor="green";
+               } 
+         }     
+        timeNew();
+</script>    
+    
+</body>
+</html>
+
+  
