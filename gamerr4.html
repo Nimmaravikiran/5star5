@@ -57,6 +57,7 @@
         </style>
   </head>
   <body>
+    <audio src="C:\Users\Ravikiran\Desktop\timerr.mp3" id="audioo" autostart="false"></audio>
     <h1>Score>>><div id="score">0</div></h1>
     <h1>Time>>><div id="time"><span class="digit" id="min">
         00</span>
@@ -116,6 +117,8 @@
         }
         function validate1()
         {   
+            var sound = document.getElementById('audioo');
+            sound.play();
             var temp=document.getElementById('box1').innerText=myArray[Math.floor(Math.random()*myArray.length)];
             document.getElementById("box1").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px";
             if (temp!="BOMB")
@@ -144,6 +147,8 @@
         }
         function validate2()
         {   
+            var sound = document.getElementById('audioo');
+            sound.play();
             var temp=document.getElementById('box2').innerText=myArray[Math.floor(Math.random()*myArray.length)];
             document.getElementById("box2").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
             if (temp!="BOMB")
@@ -173,6 +178,8 @@
         }    
         function validate3()
         {   
+            var sound = document.getElementById('audioo');
+            sound.play();
             var temp=document.getElementById('box3').innerText=myArray[Math.floor(Math.random()*myArray.length)];
             document.getElementById("box3").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
             if (temp!="BOMB")
@@ -201,6 +208,8 @@
          }
         function validate4()
         {   
+            var sound = document.getElementById('audioo');
+            sound.play();
             var temp=document.getElementById('box4').innerText=myArray[Math.floor(Math.random()*myArray.length)];
             document.getElementById("box4").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
             if (temp!="BOMB")
