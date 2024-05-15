@@ -62,14 +62,14 @@
     <span class="txt">Sec</span></div></h1>
     <table>
         <tr>
-        <td id="box1" class="square" onclick="validate1()"></td>
-        <td id="box2" class="square" onclick="validate2()"></td>
-        <td id="box3" class="square" onclick="validate3()"></td>
+        <td id="box1" class="square" onclick="validate1(); this.onclick=null;"></td>
+        <td id="box2" class="square" onclick="validate2(); this.onclick=null;"></td>
+        <td id="box3" class="square" onclick="validate3(); this.onclick=null;"></td>
         </tr>
     </table>
     <script>
         var scores=0;
-    const myArray=[1,2,3,"BOMB"];
+    var myArray=[1,2,"BOMB"];
     let minute = 0;
     let second = 0;
     let count = 0;
@@ -109,23 +109,38 @@
         }
         function validate1()
         {   
+            var temp;
             var sound = document.getElementById('audioo');
             sound.play();
-            var temp=document.getElementById('box1').innerText=myArray[Math.floor(Math.random()*myArray.length)];
-            document.getElementById("box1").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px";
-            if (temp!="BOMB")
+            if (myArray.length == 1)
+            {
+                myArray.push("Boost");   
+                temp=document.getElementById('box1').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+                if(temp == "Boost")
+                {
+                    scores = 25;
+                }
+            }
+            else{   
+                temp=document.getElementById('box1').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+                myArray = myArray.filter(item => item !== temp);  
+            document.getElementById("box1").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
+            }
+            if (temp!="BOMB" && temp!="Boost")
             {
                 scores=scores+temp;
                 document.getElementById("score").innerHTML=scores;
-                if (scores>=9){
-                    document.writeln("<h1 style='text-align:center; color:yellow'>Level 3 is successfully completed"+"</h1>");
+            }
+
+             else if (scores==25){
+                    document.writeln("<h1 style='text-align:center; color:yellow'>Your score : "+scores+"</h1>");
+                    document.writeln("<h1 style='text-align:center; color:yellow'>Level 3 has successfully completed"+"</h1>");
                     document.writeln("<a href='gamerr4.html'><h1 style='text-align:center; color:red'>CLICK HERE FOR LEVEL UP"+"</h1></a>");
-                    document.body.style.backgroundImage="url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg')";
+                    document.body.style.backgroundImage="url('https://static.vecteezy.com/system/resources/previews/022/221/169/non_2x/rocket-is-above-the-technology-circle-it-means-using-smart-technology-to-help-the-company-s-business-grow-and-expand-rapidly-both-in-the-online-world-the-internet-generates-income-for-business-vector.jpg')";
                     document.body.style.backgroundSize="100% 100%";
                     document.body.style.backgroundRepeat="no-repeat";
                     document.body.style.backgroundPosition="center";
                 }
-            } 
             else{
                 document.writeln("<h1 style='text-align:center; color:yellow'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
                 document.writeln("<h1 style='text-align:center; color:yellow'>Your score is : "+scores+"</h1>");
@@ -139,23 +154,38 @@
         }
         function validate2()
         {   
+            var temp;
             var sound = document.getElementById('audioo');
             sound.play();
-            var temp=document.getElementById('box2').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            if (myArray.length == 1)
+            {
+                myArray.push("Boost");   
+                temp=document.getElementById('box2').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+                if(temp == "Boost")
+                {
+                    scores = 25;
+                }
+            }
+            else{   
+                temp=document.getElementById('box2').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+                myArray = myArray.filter(item => item !== temp); 
             document.getElementById("box2").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
-            if (temp!="BOMB")
+            }
+            if (temp!="BOMB" && temp!="Boost")
             {
                 scores=scores+temp;
-                document.getElementById("score").innerHTML=scores;
-                if (scores>=9){
-                    document.writeln("<h1 style='text-align:center; color:yellow'>Level 3 is successfully completed"+"</h1>");
+                document.getElementById("score").innerHTML=scores; 
+            } 
+             else if (scores==25){
+                    document.writeln("<h1 style='text-align:center; color:yellow'>Your score : "+scores+"</h1>");
+                    document.writeln("<h1 style='text-align:center; color:yellow'>Level 3 has successfully completed"+"</h1>");
                     document.writeln("<a href='gamerr4.html'><h1 style='text-align:center; color:red'>CLICK HERE FOR LEVEL UP"+"</h1></a>");
-                    document.body.style.backgroundImage="url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg')";
+                    document.body.style.backgroundImage="url('https://static.vecteezy.com/system/resources/previews/022/221/169/non_2x/rocket-is-above-the-technology-circle-it-means-using-smart-technology-to-help-the-company-s-business-grow-and-expand-rapidly-both-in-the-online-world-the-internet-generates-income-for-business-vector.jpg')";
                     document.body.style.backgroundSize="100% 100%";
                     document.body.style.backgroundRepeat="no-repeat";
                     document.body.style.backgroundPosition="center";
                 }
-            }
+        
            
             else{
                 document.writeln("<h1 style='text-align:center; color:yellow'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
@@ -170,23 +200,37 @@
         }    
         function validate3()
         {   
+            var temp;
             var sound = document.getElementById('audioo');
             sound.play();
-            var temp=document.getElementById('box3').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+            if (myArray.length == 1)
+            {
+                myArray.push("Boost");   
+                temp=document.getElementById('box3').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+                if(temp == "Boost")
+                {
+                    scores = 25;
+                }
+            }
+            else{   
+                temp=document.getElementById('box3').innerText=myArray[Math.floor(Math.random()*myArray.length)];
+                myArray = myArray.filter(item => item !== temp);
             document.getElementById("box3").style="text-align:center; background-color:white; width:100px; height:100px; border:2px dashed; font-size:55px"; 
-            if (temp!="BOMB")
+            }
+            if (temp!="BOMB" && temp!="Boost")
             {
                 scores=scores+temp;
                 document.getElementById("score").innerHTML=scores;
-                if (scores>=9){
-                    document.writeln("<h1 style='text-align:center; color:yellow'>Level 3 is successfully completed"+"</h1>");
+            }
+            else if (scores==25){
+                    document.writeln("<h1 style='text-align:center; color:yellow'>Your score : "+scores+"</h1>");
+                    document.writeln("<h1 style='text-align:center; color:yellow'>Level 3 has successfully completed"+"</h1>");
                     document.writeln("<a href='gamerr4.html'><h1 style='text-align:center; color:red'>CLICK HERE FOR LEVEL UP"+"</h1></a>");
-                    document.body.style.backgroundImage="url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg')";
+                    document.body.style.backgroundImage="url('https://static.vecteezy.com/system/resources/previews/022/221/169/non_2x/rocket-is-above-the-technology-circle-it-means-using-smart-technology-to-help-the-company-s-business-grow-and-expand-rapidly-both-in-the-online-world-the-internet-generates-income-for-business-vector.jpg')";
                     document.body.style.backgroundSize="100% 100%";
                     document.body.style.backgroundRepeat="no-repeat";
                     document.body.style.backgroundPosition="center";
                 }
-            }
             else{
                 document.writeln("<h1 style='text-align:center; color:yellow'>Hey! It's a Bomb, The Game is Finished"+"</h1>");
                 document.writeln("<h1 style='text-align:center; color:yellow'>Your score is : "+scores+"</h1>");
